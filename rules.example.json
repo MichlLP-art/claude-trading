@@ -1,0 +1,51 @@
+{
+  "risk_management": {
+    "max_position_size_pct": 5,
+    "stop_loss_pct": 2,
+    "take_profit_pct": 6,
+    "max_daily_loss_pct": 5,
+    "max_open_positions": 4,
+    "max_drawdown_pct": 15,
+    "risk_per_trade_pct": 1
+  },
+  "trade_filters": {
+    "allowed_instruments": ["BTC/USDT", "ETH/USDT", "SOL/USDT"],
+    "entry_conditions": {
+      "min_volume_24h_usd": 1000000,
+      "min_rsi": 30,
+      "max_rsi": 70,
+      "require_trend_confirmation": true
+    },
+    "exit_conditions": {
+      "trailing_stop_pct": 1.5,
+      "time_based_exit_hours": 48
+    },
+    "time_windows": {
+      "allowed_days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      "trade_start_utc": "08:00",
+      "trade_end_utc": "20:00",
+      "avoid_major_news": true
+    }
+  },
+  "alert_rules": {
+    "price_thresholds": [
+      { "instrument": "BTC/USDT", "above": 100000, "below": 80000 },
+      { "instrument": "ETH/USDT", "above": 5000,   "below": 3000  }
+    ],
+    "volume_triggers": {
+      "spike_multiplier": 3,
+      "lookback_periods": 20
+    },
+    "notifications": {
+      "email": "you@example.com",
+      "webhook_url": "https://hooks.example.com/trading-alerts",
+      "channels": ["email", "webhook"]
+    }
+  },
+  "meta": {
+    "version": "1.0.0",
+    "description": "Example trading rules — copy to rules.json and customise",
+    "last_updated": "2026-05-23",
+    "author": ""
+  }
+}
