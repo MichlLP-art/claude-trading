@@ -8,7 +8,7 @@ A personal trading workspace for tracking ideas, strategies, and market notes.
 - Trade logging
 - Performance tracking
 
-## Getting Stareted
+## Getting Started
 
 Clone the repo and open it in your editor of choice.
 
